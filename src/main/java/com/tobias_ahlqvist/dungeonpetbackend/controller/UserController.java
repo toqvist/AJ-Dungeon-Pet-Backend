@@ -2,6 +2,7 @@ package com.tobias_ahlqvist.dungeonpetbackend.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tobias_ahlqvist.dungeonpetbackend.model.DBmodel;
 import com.tobias_ahlqvist.dungeonpetbackend.model.PlaceholderPet;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,7 +33,9 @@ public class UserController {
         produces = MediaType.APPLICATION_JSON_VALUE
     )
     public String save(@RequestBody String inputJSON) {
-        String returnJSON = "";
+        
+        //For testing purposes, userID is 1
+        String returnJSON =  DBmodel.savePet(inputJSON, 1);
         return returnJSON;
     }
 

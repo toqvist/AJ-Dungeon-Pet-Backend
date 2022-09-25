@@ -1,0 +1,20 @@
+DROP DATABASE IF EXISTS dungeon_pet;
+CREATE DATABASE IF NOT EXISTS dungeon_pet;
+USE dungeon_pet;
+
+CREATE TABLE IF NOT EXISTS Users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(25) NOT NULL,
+    user_password VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Pets (
+	pet_id INT PRIMARY KEY AUTO_INCREMENT,
+    jsonobject VARCHAR(1000) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS PetOwners (
+    PRIMARY KEY (user_id, pet_id),
+	FOREIGN KEY (user_id) REFERENCES Users(user_id),
+	FOREIGN KEY (pet_id) REFERENCES Pets(pet_id)
+);
