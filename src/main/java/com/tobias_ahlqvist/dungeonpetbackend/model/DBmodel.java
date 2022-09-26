@@ -61,7 +61,7 @@ public class DBmodel {
 
     public static String loadPet(String username) {
 
-        String result;
+        String result = "";
 
         // Create a pet in pet table
         try (PreparedStatement sqlQuery = DatabaseHelper.connection.prepareStatement(query_loadPet)) {
@@ -71,11 +71,10 @@ public class DBmodel {
             System.out.println(sqlQuery);
 
             ResultSet resultSet = sqlQuery.executeQuery();
-            // System.out.println(resultSet);
-            
-            result = resultSet.getString("petJSON");
-            // System.out.println(result);
 
+            while (resultSet.next()) {
+                result += resultSet.getString("petJSON");
+            }
             
         } catch (SQLException e) {
 
