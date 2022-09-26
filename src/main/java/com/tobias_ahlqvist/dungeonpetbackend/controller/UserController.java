@@ -15,6 +15,19 @@ import org.springframework.http.MediaType;
 @RestController
 public class UserController {
 
+    // @CrossOrigin
+    // @RequestMapping (
+    //     value = "/createUser", 
+    //     method = RequestMethod.POST, 
+    //     produces = MediaType.APPLICATION_JSON_VALUE
+    // )
+    // public String createuser(@RequestBody String username, String password,) {
+        
+    //     //For testing purposes, userID is 1
+    //     String returnJSON =  DBmodel.createUser(username, password);
+    //     return returnJSON;
+    // }
+
     @CrossOrigin
     @RequestMapping (
         value = "/login", 
@@ -33,9 +46,9 @@ public class UserController {
         produces = MediaType.APPLICATION_JSON_VALUE
     )
     public String save(@RequestBody String inputJSON) {
-        
+        String placeholderUsername = "admin";
         //For testing purposes, userID is 1
-        String returnJSON =  DBmodel.savePet(inputJSON, 1);
+        String returnJSON =  DBmodel.savePet(inputJSON, placeholderUsername);
         return returnJSON;
     }
 
@@ -45,11 +58,12 @@ public class UserController {
         method = RequestMethod.POST, 
         produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public String load() {
-        PlaceholderPet php = new PlaceholderPet();
+    public String load(@RequestBody String inputUsername) {
+        //PlaceholderPet php = new PlaceholderPet();
+        String placeholderUsername = "admin";
+        String json =  DBmodel.loadPet(placeholderUsername);
+        return json;
         
-
-        return php.pet;
     }
 
     @CrossOrigin

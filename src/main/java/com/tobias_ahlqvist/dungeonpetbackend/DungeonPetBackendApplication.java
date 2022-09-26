@@ -20,7 +20,6 @@ public class DungeonPetBackendApplication {
 		
 		//Connect to server, connection can be accessed in DatabaseHelper
 		DatabaseHelper.dbConnect("dungeon_pet");
-		//DatabaseHelper.dbConnect("moviedb");
 
 		SpringApplication.run(DungeonPetBackendApplication.class, args);
 	}
