@@ -4,14 +4,6 @@ import com.tobias_ahlqvist.helpers.DatabaseHelper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import javax.xml.crypto.Data;
 
 @SpringBootApplication
 public class DungeonPetBackendApplication {

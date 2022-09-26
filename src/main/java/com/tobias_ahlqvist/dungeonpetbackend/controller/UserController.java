@@ -3,7 +3,6 @@ package com.tobias_ahlqvist.dungeonpetbackend.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tobias_ahlqvist.dungeonpetbackend.model.DBmodel;
-import com.tobias_ahlqvist.dungeonpetbackend.model.PlaceholderPet;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,21 +22,21 @@ public class UserController {
     // )
     // public String createuser(@RequestBody String username, String password,) {
         
-    //     //For testing purposes, userID is 1
     //     String returnJSON =  DBmodel.createUser(username, password);
     //     return returnJSON;
     // }
 
-    @CrossOrigin
-    @RequestMapping (
-        value = "/login", 
-        method = RequestMethod.POST, 
-        produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public String login() {
-        String returnJSON = "";
-        return returnJSON;
-    }
+    // @CrossOrigin
+    // @RequestMapping (
+    //     value = "/login", 
+    //     method = RequestMethod.POST, 
+    //     produces = MediaType.APPLICATION_JSON_VALUE
+    // )
+    // public String login(@RequestBody String loginCreds) {
+    //     // loginCreds[0].user
+    //     DBmodel.login();
+    //     return DBmodel.loadPet(username);
+    // }
 
     @CrossOrigin
     @RequestMapping (
