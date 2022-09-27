@@ -14,29 +14,33 @@ import org.springframework.http.MediaType;
 @RestController
 public class UserController {
 
-    // @CrossOrigin
-    // @RequestMapping (
-    //     value = "/createUser", 
-    //     method = RequestMethod.POST, 
-    //     produces = MediaType.APPLICATION_JSON_VALUE
-    // )
-    // public String createuser(@RequestBody String username, String password,) {
+    @CrossOrigin
+    @RequestMapping (
+        value = "/createUser", 
+        method = RequestMethod.POST, 
+        produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public void createUser(@RequestBody String username, String password, String petJSON) {
         
-    //     String returnJSON =  DBmodel.createUser(username, password);
-    //     return returnJSON;
-    // }
+        String returnJSON =  DBmodel.createUser(username, password, petJSON);
+        
+    }
 
-    // @CrossOrigin
-    // @RequestMapping (
-    //     value = "/login", 
-    //     method = RequestMethod.POST, 
-    //     produces = MediaType.APPLICATION_JSON_VALUE
-    // )
-    // public String login(@RequestBody String loginCreds) {
-    //     // loginCreds[0].user
-    //     DBmodel.login();
-    //     return DBmodel.loadPet(username);
-    // }
+    @CrossOrigin
+    @RequestMapping (
+        value = "/login", 
+        method = RequestMethod.POST, 
+        produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public String login(@RequestBody String username, String password) {
+        //Get first JSON object,
+        
+        // loginCreds[0].username
+        // loginCreds[0].password
+        //DBmodel.login(); 
+
+        return DBmodel.login(username, password);
+    }
 
     @CrossOrigin
     @RequestMapping (
