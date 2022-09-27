@@ -65,16 +65,16 @@ public class UserController {
         
     }
 
-    @CrossOrigin
-    @RequestMapping (
-        value = "/test", 
-        method = RequestMethod.POST, 
-        produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public String test(@RequestBody String inputJSON) {
-        System.out.println(inputJSON);
+    // @CrossOrigin
+    // @RequestMapping (
+    //     value = "/test", 
+    //     method = RequestMethod.POST, 
+    //     produces = MediaType.APPLICATION_JSON_VALUE
+    // )
+    // public String test(@RequestBody String inputJSON) {
+    //     System.out.println(inputJSON);
 
-        String returnJSON = inputJSON;
-        return returnJSON;
-    }
+    //     String returnJSON = inputJSON;
+    //     return returnJSON;
+    // }
 }
